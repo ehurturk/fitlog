@@ -1,0 +1,10 @@
+.list {
+  /* display: flex; */
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+.inputElement {
+  margin: 5px;
+}
+
