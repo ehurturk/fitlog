@@ -1,13 +1,14 @@
 import React from "react";
-import Dashboard from "../components/Dashboard";
-import Form from "../components/Form";
 
-function Dashboardpage() {
+import DashboardSidebar from "../components/DashboardSidebar";
+import Dashboard from "../components/Dashboard";
+
+function DashboardPage() {
   return (
     <div>
-      <Dashboard containers={<Form />} />
+      <DashboardSidebar containers={<Dashboard />} />
     </div>
   );
 }
 
-export default Dashboardpage;
+export default DashboardPage;

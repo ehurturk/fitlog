@@ -1,16 +1,16 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import { Link } from 'react-router-dom'
+import { Fragment } from "react";
+import { Popover, Transition } from "@headlessui/react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Link } from "react-router-dom";
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Reviews', href: '#' },
-]
+  { name: "Product", href: "#" },
+  { name: "Features", href: "#" },
+  { name: "Reviews", href: "#" },
+];
 
-export default function Homepage() {
+export default function HomePage() {
   return (
     <div className="bg-gray-50">
       <div className="relative overflow-hidden">
@@ -32,10 +32,21 @@ export default function Homepage() {
                   height={20}
                   patternUnits="userSpaceOnUse"
                 >
-                  <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
+                  <rect
+                    x={0}
+                    y={0}
+                    width={4}
+                    height={4}
+                    className="text-gray-200"
+                    fill="currentColor"
+                  />
                 </pattern>
               </defs>
-              <rect width={404} height={784} fill="url(#e229dbec-10e9-49ee-8ec3-0286ca089edf)" />
+              <rect
+                width={404}
+                height={784}
+                fill="url(#e229dbec-10e9-49ee-8ec3-0286ca089edf)"
+              />
             </svg>
             <svg
               className="absolute left-full transform -translate-y-3/4 -translate-x-1/4 sm:-translate-x-1/2 md:-translate-y-1/2 lg:-translate-x-3/4"
@@ -53,10 +64,21 @@ export default function Homepage() {
                   height={20}
                   patternUnits="userSpaceOnUse"
                 >
-                  <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
+                  <rect
+                    x={0}
+                    y={0}
+                    width={4}
+                    height={4}
+                    className="text-gray-200"
+                    fill="currentColor"
+                  />
                 </pattern>
               </defs>
-              <rect width={404} height={784} fill="url(#d2a68204-c383-44b1-b99f-42ccff4e5365)" />
+              <rect
+                width={404}
+                height={784}
+                fill="url(#d2a68204-c383-44b1-b99f-42ccff4e5365)"
+              />
             </svg>
           </div>
         </div>
@@ -64,7 +86,10 @@ export default function Homepage() {
         <div className="relative pt-6 pb-16 sm:pb-24">
           <Popover>
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
-              <nav className="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
+              <nav
+                className="relative flex items-center justify-between sm:h-10 md:justify-center"
+                aria-label="Global"
+              >
                 <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
                   <div className="flex items-center justify-between w-full md:w-auto">
                     <a href="#">
@@ -85,23 +110,30 @@ export default function Homepage() {
                 </div>
                 <div className="hidden md:flex md:space-x-10">
                   {navigation.map((item) => (
-                    <a key={item.name} href={item.href} className="font-medium text-gray-500 hover:text-gray-900">
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="font-medium text-gray-500 hover:text-gray-900"
+                    >
                       {item.name}
                     </a>
                   ))}
                 </div>
                 <div className="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
                   <span className="inline-flex rounded-md shadow m-2">
-					<Link to='/dashboard' className='inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500'>
-						Log In
-					</Link>
+                    <Link
+                      to="/dashboard"
+                      className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500"
+                    >
+                      Log In
+                    </Link>
                   </span>
-				  <span className="inline-flex rounded-md shadow m-2">
+                  <span className="inline-flex rounded-md shadow m-2">
                     <a
                       href="#"
                       className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500"
                     >
-						Sign Up
+                      Sign Up
                     </a>
                   </span>
                 </div>
@@ -166,7 +198,9 @@ export default function Homepage() {
                 <span className="block text-indigo-600">your life.</span>
               </h1>
               <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                Improve your life quality by simply logging your daily activites, food consumptions, and more. Keep track of your life, improve it accordingly.
+                Improve your life quality by simply logging your daily
+                activites, food consumptions, and more. Keep track of your life,
+                improve it accordingly.
               </p>
             </div>
           </div>
@@ -193,10 +227,18 @@ export default function Homepage() {
           </h2>
           <div className="mt-8 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
             <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-              <img className="h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple" />
+              <img
+                className="h-12"
+                src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
+                alt="Tuple"
+              />
             </div>
             <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-              <img className="h-12" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage" />
+              <img
+                className="h-12"
+                src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg"
+                alt="Mirage"
+              />
             </div>
             <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
               <img
@@ -223,5 +265,5 @@ export default function Homepage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
