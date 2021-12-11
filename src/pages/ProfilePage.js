@@ -6,7 +6,7 @@ import Form from "../components/Form";
 export default function ProfilePage() {
   return (
     <div>
-      <DashboardSidebar containers={<Form />} />
+      <DashboardSidebar containers={<Form />} openSide={-1} />
     </div>
   );
 }

@@ -6,7 +6,7 @@ import Diary from "../components/Diary";
 function DiaryPage() {
   return (
     <div>
-      <DashboardSidebar containers={<Diary />} />
+      <DashboardSidebar containers={<Diary />} openSide={1} />
     </div>
   );
 }

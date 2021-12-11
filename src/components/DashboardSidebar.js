@@ -34,17 +34,8 @@ function classNames(...classes) {
 
 function DashboardSidebar(props) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState();
-
-  useEffect(() => {
-    for (let i = 0; i < navigation.length; i++) {
-      if (i === activeTab) {
-        navigation[i].current = true;
-      } else navigation[i].current = false;
-    }
-    console.log(activeTab);
-  }, [activeTab]);
-
+  for (let i = 0; i < navigation.length; i++) navigation[i].current = false;
+  if (props.openSide >= 0) navigation[props.openSide].current = true;
   return (
     <>
       {/*
@@ -173,9 +164,6 @@ function DashboardSidebar(props) {
                         : "text-gray-300 hover:bg-gray-700 hover:text-white",
                       "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                     )}
-                    onClick={() => {
-                      setActiveTab(idx);
-                    }}
                   >
                     <item.icon
                       className={classNames(

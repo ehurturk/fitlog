@@ -6,7 +6,7 @@ import Dashboard from "../components/Dashboard";
 function DashboardPage() {
   return (
     <div>
-      <DashboardSidebar containers={<Dashboard />} />
+      <DashboardSidebar containers={<Dashboard />} openSide={0} />
     </div>
   );
 }
