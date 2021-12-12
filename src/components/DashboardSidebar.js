@@ -24,7 +24,7 @@ const navigation = [
 ];
 const userNavigation = [
   { name: "Settings", href: "settings" },
-  { name: "Sign out", href: "#" },
+  { name: "Sign out", href: "/" },
 ];
 
 function classNames(...classes) {
