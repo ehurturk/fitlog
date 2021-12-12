@@ -23,7 +23,6 @@ const navigation = [
   { name: "Reports", href: "reports", icon: ChartBarIcon, current: false },
 ];
 const userNavigation = [
-  { name: "Your Profile", href: "profile" },
   { name: "Settings", href: "settings" },
   { name: "Sign out", href: "#" },
 ];
@@ -62,7 +61,7 @@ function DashboardSidebar(props) {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Overlay className="fixed inset-0 bg-gray-600 bg-opacity-75" />
+              <Dialog.Overlay className="fixed inset-0 bg-sky-600 bg-opacity-75" />
             </Transition.Child>
             <Transition.Child
               as={Fragment}
@@ -73,7 +72,7 @@ function DashboardSidebar(props) {
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <div className="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-gray-800">
+              <div className="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-sky-700">
                 <Transition.Child
                   as={Fragment}
                   enter="ease-in-out duration-300"
@@ -97,6 +96,7 @@ function DashboardSidebar(props) {
                     </button>
                   </div>
                 </Transition.Child>
+
                 <div className="flex-shrink-0 flex items-center px-4">
                   {/* <img
                     className="h-8 w-auto"
@@ -113,8 +113,8 @@ function DashboardSidebar(props) {
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                            ? "bg-sky-900 text-white"
+                            : "text-gray-300 hover:bg-sky-900 hover:text-white",
                           "group flex items-center px-2 py-2 text-base font-medium rounded-md"
                         )}
                       >
@@ -143,8 +143,8 @@ function DashboardSidebar(props) {
         {/* Static sidebar for desktop */}
         <div className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
           {/* Sidebar component, swap this element with another sidebar if you like */}
-          <div className="flex-1 flex flex-col min-h-0 bg-gray-800">
-            <div className="flex items-center h-16 flex-shrink-0 px-4 bg-gray-900">
+          <div className="flex-1 flex flex-col min-h-0 bg-sky-700">
+            <div className="flex items-center h-16 flex-shrink-0 px-4 bg-sky-900">
               {/* <img
                     className="h-8 w-auto"
                     src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
@@ -160,8 +160,8 @@ function DashboardSidebar(props) {
                     href={item.href}
                     className={classNames(
                       item.current
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                        ? "bg-sky-900 text-white"
+                        : "text-gray-300 hover:bg-sky-900 hover:text-white",
                       "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                     )}
                   >
@@ -193,7 +193,7 @@ function DashboardSidebar(props) {
             </button>
             <div className="flex-1 px-4 flex justify-between">
               <div className="flex-1 flex">
-                <form className="w-full flex md:ml-0" action="#" method="GET">
+                {/* <form className="w-full flex md:ml-0" action="#" method="GET">
                   <label htmlFor="search-field" className="sr-only">
                     Search
                   </label>
@@ -209,7 +209,7 @@ function DashboardSidebar(props) {
                       name="search"
                     />
                   </div>
-                </form>
+                </form> */}
               </div>
               <div className="ml-4 flex items-center md:ml-6">
                 <button

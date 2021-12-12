@@ -1,9 +1,10 @@
 import React from "react";
+import Graph from "./Graph";
 
 function Dashboard() {
   return (
     <div>
-      <h1>dash bro</h1>
+      <Graph />
     </div>
   );
 }
