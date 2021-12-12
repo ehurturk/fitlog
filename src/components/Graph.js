@@ -1,44 +1,78 @@
+/*
+  Sample Line Graph Usage:
+  <LineGraph
+    title="Calorie Activity"
+    data={[
+      {
+        values: [
+          [10, 20], // X-Y Pairs [X, Y]
+          [20, 40],
+        ],
+        color: "rgb(75, 192, 192)", // color of the line
+      }, // if you want to have multiple lines, just add another Object
+      {
+        values: [
+          [10, 50],
+          [20, 20],
+        ],
+        color: "rgb(255, 145, 0)",
+      },
+    ]}
+  />
+*/
+
 import React, { useEffect } from "react";
 // npm i react-helmet
 import { Helmet } from "react-helmet";
 import Chart from "chart.js/auto";
-export default function Index() {
+export default function Graph(props) {
   useEffect(() => {
-    const chart = new Chart(document.getElementById("myChart"), {
-      type: "line",
+    const data = props.data;
+    const datasets = [];
+    for (let i = 0; i < data.length; i++) {
+      // amount of graph in one canvas
+      const x = [];
+      for (let j = 0; j < data[i].values.length; j++) {
+        x.push(data[i].values[j][1]);
+      }
+
+      console.log(x);
+      datasets.push({
+        label: data[i].name,
+        borderColor: data[i].lineColor,
+        backgroundColor: data[i].backgroundColor,
+        data: x,
+        fill: false,
+        pointBackgroundColor: "#4A5568",
+        borderWidth: "3",
+        pointBorderWidth: "4",
+        pointHoverRadius: "6",
+        pointHoverBorderWidth: "8",
+        pointHoverBorderColor: "rgb(74,85,104,0.2)",
+      });
+    }
+    const labels = [];
+    // TODO: Assumes all data labels are same length!!!
+    for (let i = 0; i < data[0].values.length; i++) {
+      labels.push(data[0].values[i][0]);
+    }
+    if (props.x_sorted)
+      labels.sort((a, b) => {
+        return a - b;
+      });
+    const chart = new Chart(document.getElementById(props.title), {
+      type: props.type,
       data: {
-        labels: [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-          "Aug",
-          "Sep",
-          "Nov",
-          "Dec",
-        ],
-        datasets: [
-          {
-            label: "16 Mar 2018",
-            borderColor: "rgb(75, 192, 192)",
-            data: [600, 400, 620, 300, 200, 600, 230, 300, 200, 200, 100, 1200],
-            fill: false,
-            pointBackgroundColor: "#4A5568",
-            borderWidth: "3",
-            pointBorderWidth: "4",
-            pointHoverRadius: "6",
-            pointHoverBorderWidth: "8",
-            pointHoverBorderColor: "rgb(74,85,104,0.2)",
-          },
-        ],
+        labels: labels,
+        datasets: datasets,
       },
       options: {
+        maintainAspectRatio:
+          props.lockAspectRatio !== undefined ? props.lockAspectRatio : true,
         legend: {
           position: false,
         },
+        // responsive: false,
         scales: {
           yAxes: [
             {
@@ -69,7 +103,7 @@ export default function Index() {
               <div>
                 <div className="lg:flex w-full justify-between">
                   <h3 className="text-gray-600 dark:text-gray-400 leading-5 text-base md:text-xl font-bold">
-                    Activity Overview
+                    {props.title}
                   </h3>
                   <div className="flex items-center justify-between lg:justify-start mt-2 md:mt-4 lg:mt-0">
                     <div className="flex items-center">
@@ -130,7 +164,9 @@ export default function Index() {
                 </div>
               </div>
               <div className="mt-6">
-                <canvas id="myChart" width={"100%"} height={"50%"} />
+                <div className={``}>
+                  <canvas id={props.title} width={1025} height={400} />
+                </div>
               </div>
             </div>
           </div>
